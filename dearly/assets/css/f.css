@@ -1,0 +1,102 @@
+/* Variant F: de inhoud van de brief, in de eigen kleuren en letters van Dearly, met meer spanning.
+   Laadt na dearly.css (navy, crème, teal, periwinkle, ballonrood; DIN + Baskerville). */
+
+/* hero: donker, grote typografie, één pilfoto, wisselende gebeurtenis */
+.f-hero{min-height:calc(var(--vh,1vh)*100);display:flex;align-items:center;padding:140px 0 56px;color:var(--creme);position:relative;overflow:hidden;
+  background:radial-gradient(55% 60% at 100% 0%,rgba(159,184,220,.28),transparent 60%),radial-gradient(50% 55% at 0% 100%,rgba(25,125,130,.5),transparent 65%),var(--navy)}
+.f-hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,80px);align-items:center;position:relative;z-index:2}
+.f-hero .h1 .it{color:var(--peri);font-size:clamp(2.2rem,5vw,4.8rem)}
+.f-hero .h1 .caps{font-size:clamp(4rem,11vw,10.5rem);color:var(--creme)}
+.f-hero .h1 .caps em{font-style:normal;color:var(--ballon)}
+.f-hero .lead{margin-top:26px;max-width:50ch;color:rgba(245,236,221,.85)}
+.f-hero .pil{border-color:rgba(245,236,221,.45)}
+.f-hero .btns .btn-rand{color:var(--creme)}
+.f-hero .beeld{position:relative}
+.f-hero .beeld img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:999px;box-shadow:0 40px 90px rgba(0,0,0,.35)}
+.f-hero .beeld .noot{position:absolute;left:-8px;bottom:9%;max-width:300px;background:var(--creme);color:var(--navy);border-radius:22px 22px 22px 4px;padding:16px 18px;font-size:15px;line-height:1.4;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.f-hero .beeld .noot b{display:block;font:400 1.3rem/1 var(--display);text-transform:uppercase;margin-bottom:6px}
+/* wisselende gebeurtenis */
+.wissel{margin-top:30px;font-size:clamp(1.05rem,1.4vw,1.25rem);color:rgba(245,236,221,.75);display:flex;flex-wrap:wrap;gap:0 .4em;align-items:baseline}
+.wissel .woord{display:inline-grid;font-family:var(--serif);font-style:italic;color:var(--creme);font-size:1.35em;line-height:1}
+.wissel .woord span{grid-area:1/1;opacity:0;transform:translateY(.4em);transition:opacity .5s,transform .5s;white-space:nowrap}
+.wissel .woord span.aan{opacity:1;transform:none}
+@media (max-width:900px){.f-hero{padding-top:120px;min-height:0}.f-hero .wrap{grid-template-columns:1fr}.f-hero .beeld img{aspect-ratio:16/11;border-radius:var(--r)}.f-hero .beeld .noot{left:12px;right:12px;bottom:12px;max-width:none}}
+
+/* lichtkrant met gebeurtenissen */
+.krant{background:var(--creme);color:var(--navy);overflow:hidden;padding:22px 0;white-space:nowrap;margin:12px;border-radius:999px}
+.krant .lint{display:inline-flex;animation:krant 40s linear infinite}
+.krant span{font:400 clamp(1.6rem,3.2vw,2.6rem)/1 var(--display);text-transform:uppercase;padding:0 .5em;display:inline-flex;align-items:center;gap:.6em}
+.krant span::after{content:"";width:.28em;height:.28em;border-radius:50%;background:var(--ballon)}
+.krant span:nth-child(even){font-family:var(--serif);font-style:italic;text-transform:none;color:var(--teal)}
+.krant span.werk::after{background:var(--navy)}
+@keyframes krant{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.krant .lint{animation:none}}
+
+/* partnermodel: plakkende kop links, pijlers rechts */
+.partner{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,96px);align-items:start}
+.partner .pkop{position:sticky;top:120px}
+.pijlers{display:grid;border-top:1.5px solid var(--navy)}
+.pijler{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,3vw,40px);padding:30px 0;border-bottom:1px solid rgba(13,22,67,.18);align-items:start;transition:opacity .5s,transform .5s;opacity:.3;transform:translateX(16px)}
+.pijler.zicht{opacity:1;transform:none}
+.pijler .nr{font:400 clamp(3rem,5vw,4.6rem)/.8 var(--serif);font-style:italic;color:var(--ballon);min-width:1.4em}
+.pijler h3{font:400 clamp(1.8rem,2.6vw,2.4rem)/.95 var(--display);text-transform:uppercase;margin-bottom:8px}
+.pijler p{max-width:44ch}
+@media (max-width:820px){.partner{grid-template-columns:1fr}.partner .pkop{position:static}}
+
+/* thema's: lijst links, foto wisselt rechts */
+.themas{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,72px);align-items:center;margin-top:48px}
+.themas ul{list-style:none;display:grid}
+.themas li{border-bottom:1px solid rgba(245,236,221,.2)}
+.themas button{all:unset;cursor:pointer;display:flex;align-items:center;gap:16px;width:100%;padding:16px 0;font:400 clamp(1.8rem,3.4vw,3.2rem)/.95 var(--display);text-transform:uppercase;color:rgba(245,236,221,.45);transition:color .25s,padding-left .25s}
+.themas button::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--ballon);opacity:0;transition:opacity .25s}
+.themas button:hover,.themas button[aria-pressed=true]{color:var(--creme);padding-left:6px}
+.themas button[aria-pressed=true]::before{opacity:1}
+.themas button small{font:500 12px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:999px;border:1px solid rgba(245,236,221,.4);margin-left:auto;opacity:.8}
+.themas .venster{position:relative;aspect-ratio:4/5;border-radius:999px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.3)}
+.themas .venster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s,transform 6s linear;transform:scale(1.04)}
+.themas .venster img.aan{opacity:1;transform:scale(1)}
+.themas .meer{margin-top:18px;font-size:15px;opacity:.7}
+@media (max-width:820px){.themas{grid-template-columns:1fr}.themas .venster{aspect-ratio:16/10;border-radius:var(--r)}}
+
+/* twee perspectieven als tabs */
+.persp{margin-top:40px}
+.persp [role=tablist]{display:inline-flex;gap:6px;background:var(--creme-2);border-radius:999px;padding:6px}
+.persp [role=tab]{all:unset;cursor:pointer;padding:12px 22px;border-radius:999px;font:500 15px/1 var(--sans)}
+.persp [role=tab][aria-selected=true]{background:var(--navy);color:var(--creme)}
+.persp [role=tabpanel]{margin-top:28px}
+.persp [role=tabpanel][hidden]{display:none}
+.persp .route{margin-top:0}
+.persp .route.vier{grid-template-columns:repeat(4,1fr)}
+.persp .route.vier::before{left:10%;right:10%}
+@media (max-width:820px){.persp .route.vier{grid-template-columns:1fr}}
+
+/* diensten als rij van hoge kaarten */
+.dienstrij{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px var(--gut) 24px;margin-top:40px;scrollbar-width:none}
+.dienstkaart{flex:0 0 min(72vw,300px);min-height:340px;border-radius:var(--r);padding:28px;display:flex;flex-direction:column;justify-content:space-between;scroll-snap-align:start;text-decoration:none;color:inherit;transition:transform .3s}
+.dienstkaart:hover{transform:translateY(-6px)}
+.dienstkaart:nth-child(odd){background:var(--creme-2)}
+.dienstkaart:nth-child(even){background:var(--peri)}
+.dienstkaart:nth-child(3n){background:var(--navy);color:var(--creme)}
+.dienstkaart .nr{font:400 1rem/1 var(--display);letter-spacing:.08em;opacity:.55}
+.dienstkaart h3{font:400 clamp(1.8rem,2.4vw,2.2rem)/.92 var(--display);text-transform:uppercase;margin-top:auto}
+.dienstkaart p{font-size:15px;margin-top:10px;max-width:28ch}
+.dienstkaart .meer{margin-top:18px;font-weight:500;color:var(--ballon)}
+
+/* placeholder, zichtbaar gemarkeerd */
+.ph{display:inline-block;border:1.5px dashed #b85c00;color:#b85c00;border-radius:8px;padding:6px 10px;font:500 12px/1.3 var(--sans);background:rgba(255,255,255,.6)}
+.citaat-ph{margin-top:16px;background:var(--creme-2);border-radius:var(--r);padding:28px 32px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center}
+.citaat-ph p{font:400 clamp(1.2rem,1.8vw,1.5rem)/1.3 var(--serif);font-style:italic}
+@media (max-width:640px){.citaat-ph{grid-template-columns:1fr}}
+
+/* lessen uit de remakes (ParentSquare, Inuka) */
+.tag-d{position:absolute;z-index:3;background:var(--creme);color:var(--navy);border-radius:999px;padding:8px 14px;font:500 13px/1 var(--sans);box-shadow:0 10px 30px rgba(0,0,0,.25);display:inline-flex;align-items:center;gap:8px}
+.tag-d::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ballon)}
+.a1{left:-6%;top:14%}.a2{right:-4%;top:26%}.a3{left:-10%;top:52%}.a4{right:-8%;top:62%}
+@media (max-width:900px){.tag-d{display:none}}
+.twee-d{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 0}
+.twee-d>div{border-radius:var(--r);padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;gap:14px}
+.twee-d .peri{background:var(--peri)}.twee-d .wit{background:var(--creme-2)}
+.twee-d .h2 .caps{font-size:clamp(2.2rem,3.6vw,3.4rem)}.twee-d .h2 .it{font-size:clamp(1.5rem,2.4vw,2.2rem)}
+.twee-d p{max-width:44ch}
+.twee-d .btn{align-self:flex-start;margin-top:auto}
+@media (max-width:820px){.twee-d{grid-template-columns:1fr}}

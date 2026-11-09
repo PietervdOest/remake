@@ -1,0 +1,117 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Remake: Think Company homepage</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Remake of thinkcompany.com (structure, type, colour, motion). Copy is paraphrased, images are placeholders. */
+:root{--navy:#061C3A;--navy-2:#0B2A52;--red:#FF2E1F;--cream:#F6F1E7;--sand:#EEE6D6;--ink:#101828;--max:1240px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--cream);font:400 17px/1.55 Inter,system-ui,sans-serif;overflow-x:hidden}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:"Inter Tight",Inter,sans-serif;font-weight:800;letter-spacing:-.035em;line-height:.95}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font:500 15px/1 Inter;text-decoration:none;color:var(--cream);border:1.5px solid rgba(246,241,231,.4)}
+.btn.red{background:var(--red);border-color:var(--red);color:#fff}
+.btn.dark{background:var(--navy);border-color:var(--navy);color:var(--cream)}
+.ph{background:linear-gradient(135deg,#2a4a78,#15335c);display:grid;place-items:center;font-size:12px;color:#9fb4d3;border-radius:14px}
+/* grain */
+.grain{position:relative}
+.grain::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.25;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:22px 28px}
+.logo{font-family:"Inter Tight";font-weight:800;line-height:.9;font-size:22px;letter-spacing:-.03em}
+.menu{width:52px;height:52px;border-radius:50%;background:var(--red);border:0;display:grid;place-items:center;cursor:pointer}
+.menu i{width:20px;height:2px;background:#fff;box-shadow:0 -6px #fff,0 6px #fff;display:block}
+/* hero */
+.hero{min-height:min(100vh,860px);display:grid;place-items:center;text-align:center;position:relative;padding:120px 24px 80px;background:radial-gradient(45% 40% at 85% 20%,rgba(255,46,31,.25),transparent 60%),radial-gradient(40% 40% at 10% 90%,rgba(52,120,246,.25),transparent 60%),var(--navy)}
+.hero h1{font-size:clamp(3rem,8.2vw,7.6rem);max-width:12ch;margin:0 auto}
+.hero h1 span{color:var(--red);display:block}
+.hero p{max-width:56ch;margin:28px auto 0;font-size:1.05rem;opacity:.9}
+.ask{margin:32px auto 0;display:flex;align-items:center;gap:12px;padding:8px 8px 8px 20px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);max-width:360px;font-size:15px;opacity:.9;position:relative}
+.ask::before{content:"";position:absolute;left:-6px;top:10px;width:30px;height:30px;border-radius:50%;border:3px solid var(--red);border-color:var(--red) transparent transparent transparent;transform:rotate(-30deg)}
+.ask b{margin-left:auto;width:36px;height:36px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-size:16px}
+.float{position:absolute;border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.p1{left:3%;top:14%;width:12vw;height:16vw;transform:rotate(-4deg)}.p2{left:24%;top:4%;width:9vw;height:7vw}.p3{right:4%;top:10%;width:14vw;height:10vw;transform:rotate(3deg)}.p4{right:8%;bottom:16%;width:11vw;height:14vw}.p5{left:10%;bottom:12%;width:10vw;height:7vw}
+.float .ph{width:100%;height:100%;border-radius:0}
+@media (max-width:900px){.float{display:none}}
+/* ask think */
+.askthink{text-align:center;padding:140px 24px}
+.askthink h2{font-size:clamp(3.4rem,10vw,9rem);color:var(--red)}
+.chips{display:grid;gap:8px;max-width:520px;margin:32px auto 0}
+.chips span{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 18px;font-size:15px;text-align:left}
+.chips span.on{border-color:var(--red)}
+/* work: sticky stack on light */
+.work{background:var(--cream);color:var(--ink);padding:120px 0}
+.work h2{font-size:clamp(2.4rem,5vw,4.6rem);max-width:16ch}
+.work h2 em{font-style:normal;color:#5b6b7f}
+.stack{display:grid;gap:24px;margin-top:56px}
+.case{position:sticky;top:90px;background:#fff;border-radius:24px;display:grid;grid-template-columns:1fr 1.2fr;overflow:hidden;box-shadow:0 -10px 40px rgba(6,28,58,.08);min-height:520px}
+.case:nth-child(2){top:114px}.case:nth-child(3){top:138px}
+.case .text{padding:40px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.case small{font:500 12px/1 Inter;letter-spacing:.08em;text-transform:uppercase;background:var(--sand);padding:6px 10px;border-radius:6px;align-self:flex-start}
+.case h3{font-size:clamp(1.6rem,2.6vw,2.4rem);font-weight:700}
+.case p{color:#475467}
+.case .ph{border-radius:0;background:linear-gradient(135deg,#dfe4ee,#c5cfe0);color:#5b6b7f}
+.case .ph.a{background:linear-gradient(135deg,#ffd9d4,#ffb3a8)}.case .ph.b{background:linear-gradient(135deg,#d9f0e6,#a9dcc4)}
+@media (max-width:820px){.case{grid-template-columns:1fr;position:relative;top:auto!important;min-height:0}.case .ph{height:220px}}
+/* complexity */
+.complex{padding:140px 0;text-align:center}
+.complex h2{font-size:clamp(2.6rem,6vw,5.6rem);max-width:16ch;margin:0 auto 32px}
+.cloud{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:900px;margin:0 auto}
+.cloud span{padding:12px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.25);font-size:15px}
+.cloud span.red{background:var(--red);border-color:var(--red)}
+/* into */
+.into{background:var(--sand);color:var(--ink);padding:120px 0}
+.into h2{font-size:clamp(2.2rem,4.6vw,4rem);margin-bottom:40px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid3 article{background:#fff;border-radius:20px;overflow:hidden}
+.grid3 .ph{aspect-ratio:16/10;border-radius:0;background:linear-gradient(135deg,#e6e9ef,#cfd6e2);color:#5b6b7f}
+.grid3 div{padding:20px}
+.grid3 h3{font-size:1.2rem;font-weight:700;margin-bottom:8px}
+.grid3 p{font-size:14px;color:#475467}
+@media (max-width:820px){.grid3{grid-template-columns:1fr}}
+/* quotes */
+.quotes{padding:140px 0;text-align:center}
+.quotes blockquote{font-family:"Inter Tight";font-weight:700;font-size:clamp(1.8rem,4vw,3.4rem);letter-spacing:-.03em;line-height:1.05;max-width:22ch;margin:0 auto}
+.quotes cite{display:block;margin-top:20px;font-style:normal;opacity:.7;font-size:14px}
+/* cta */
+.cta{background:var(--red);color:#fff;padding:140px 0;text-align:center}
+.cta h2{font-size:clamp(2.8rem,7vw,6.4rem);max-width:14ch;margin:0 auto 32px}
+.cta .btn{background:#fff;color:var(--navy);border-color:#fff}
+/* footer */
+footer{padding:64px 0 32px}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;font-size:14px}
+footer h4{font:500 12px/1 Inter;letter-spacing:.1em;text-transform:uppercase;opacity:.6;margin-bottom:14px}
+footer li{list-style:none;margin:6px 0;opacity:.9}
+footer .bottom{margin-top:48px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:12px;opacity:.6;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media (max-width:820px){footer .cols{grid-template-columns:1fr 1fr}}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+</style></head><body>
+<header><div class="logo">Think<br>Company</div><button class="menu" aria-label="Menu"><i></i></button></header>
+
+<section class="hero grain">
+  <div class="float p1"><div class="ph">photo</div></div><div class="float p2"><div class="ph">photo</div></div><div class="float p3"><div class="ph">photo</div></div><div class="float p4"><div class="ph">photo</div></div><div class="float p5"><div class="ph">photo</div></div>
+  <div><h1>We're the people <span>you want in the room.</span></h1>
+  <p>Placeholder: one sentence on who the team is (strategists, designers, engineers) and the kind of complexity they partner on.</p>
+  <div class="ask">Ask us anything...<b>→</b></div></div>
+</section>
+
+<section class="askthink grain"><h2>Ask Think</h2><div class="chips"><span class="on">What kind of work does Think do?</span><span>How does Think approach AI?</span><span>Show me work relevant to my industry...</span><span>How is Think different from a typical agency?</span></div></section>
+
+<section class="work"><div class="wrap"><small style="font:500 12px/1 Inter;letter-spacing:.1em;text-transform:uppercase;color:#5b6b7f">Featured work</small><h2 style="margin-top:14px">We solve the problems <em>worth solving.</em></h2>
+  <div class="stack">
+    <article class="case"><div class="text"><small>Global media and tech</small><h3>Placeholder: support teams searched a dozen tools, now one platform brings the answer.</h3><p>Placeholder paragraph with the shape of the problem and the outcome.</p><a class="btn dark" href="#" style="align-self:flex-start">Learn more</a></div><div class="ph">placeholder: product screens</div></article>
+    <article class="case"><div class="text"><small>Pharmaceuticals</small><h3>Placeholder: information can save lives, but only if the right people can find it.</h3><p>Placeholder paragraph with the shape of the problem and the outcome.</p><a class="btn dark" href="#" style="align-self:flex-start">Learn more</a></div><div class="ph a">placeholder: product screens</div></article>
+    <article class="case"><div class="text"><small>Logistics</small><h3>Placeholder: a heavy-equipment operator ran on paper, now it runs on one system.</h3><p>Placeholder paragraph with the shape of the problem and the outcome.</p><a class="btn dark" href="#" style="align-self:flex-start">Learn more</a></div><div class="ph b">placeholder: product screens</div></article>
+  </div></div></section>
+
+<section class="complex grain"><div class="wrap"><h2>You're navigating something complex.</h2><div class="cloud"><span>Legacy systems</span><span class="red">AI strategy</span><span>Regulated industries</span><span>Service design</span><span>Research</span><span>Platform modernisation</span><span class="red">Change at scale</span><span>Design systems</span><span>Accessibility</span></div></div></section>
+
+<section class="into"><div class="wrap"><h2>What we're into right now.</h2><div class="grid3"><article><div class="ph">video still</div><div><h3>Placeholder: brand refresh story</h3><p>Placeholder teaser sentence.</p></div></article><article><div class="ph">article</div><div><h3>Placeholder: a point of view on CX</h3><p>Placeholder teaser sentence.</p></div></article><article><div class="ph">talk</div><div><h3>Placeholder: an event or talk</h3><p>Placeholder teaser sentence.</p></div></article></div></div></section>
+
+<section class="quotes grain"><div class="wrap"><blockquote>"Placeholder client quote, short and human, set very large."</blockquote><cite>Name, role, company</cite></div></section>
+
+<section class="cta"><div class="wrap"><h2>You've got a hard problem. We're listening.</h2><a class="btn" href="#">Get in touch</a></div></section>
+
+<footer><div class="wrap"><div class="cols"><div><div class="logo">Think<br>Company</div><p style="margin-top:16px;opacity:.7;max-width:30ch">Placeholder: one line about the company and its locations.</p></div><div><h4>Explore</h4><li>Work</li><li>Services</li><li>About</li><li>Careers</li></div><div><h4>Social</h4><li>LinkedIn</li><li>Instagram</li><li>YouTube</li></div><div><h4>Utility</h4><li>Privacy</li><li>Accessibility</li><li>Contact</li></div></div><div class="bottom"><span>© Year, placeholder</span><span>Remake for study, not affiliated</span></div></div></footer>
+<script>const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll('.rv').forEach(el=>io.observe(el));</script>
+</body></html>

@@ -1,0 +1,143 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Remake: Inuka Coaching homepage</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Remake van inukacoaching.com/nl (structuur, typografie, kleur, componenten). Copy is geparafraseerd, beelden zijn plaatshouders. */
+:root{--green:#0A4A3A;--teal:#009179;--blue:#224FB1;--ink:#100717;--soft:#4b4b4b;--bg:#FEFEFA;--beige:#F7F3EC;--mint:#E8F5EF;--yellow:#FBF3D3;--peach:#F9E4DA;--cyan:#DDF1F3;--r:24px;--max:1180px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 "Open Sans",system-ui,sans-serif}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Poppins,sans-serif;font-weight:500;line-height:1.15;color:var(--green)}
+h1{font-size:clamp(2.2rem,4.4vw,3.4rem)}h2{font-size:clamp(1.7rem,3vw,2.4rem)}h3{font-size:1.05rem;font-weight:600;color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font:600 14px/1 Poppins;text-decoration:none;border:1.5px solid var(--blue);color:var(--blue);background:#fff}
+.btn.solid{background:var(--blue);color:#fff}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.eyebrow{font:600 11px/1 Poppins;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+.ph{background:linear-gradient(135deg,#e4ebe6,#cfdcd4);border-radius:16px;display:grid;place-items:center;color:#567a69;font-size:12px}
+section{padding:64px 0}
+.c{text-align:center}
+/* header */
+header{display:flex;align-items:center;gap:28px;height:64px;padding:0 24px;font-size:14px}
+.logo{display:flex;align-items:center;gap:6px;font:600 20px Poppins;color:var(--green)}
+.logo b{width:0;height:0;border-left:14px solid var(--green);border-top:9px solid transparent;border-bottom:9px solid transparent}
+nav{display:flex;gap:22px;font-weight:600}nav a{text-decoration:none;color:var(--ink)}
+header .right{margin-left:auto;display:flex;gap:16px;align-items:center}
+@media (max-width:900px){nav{display:none}}
+/* hero kaart */
+.herokaart{background:var(--beige);border-radius:var(--r);margin:0 20px;padding:48px 40px 28px}
+.herokaart .top{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.herokaart p.sub{color:var(--soft);max-width:48ch;margin:14px 0 24px}
+.ster{margin-top:18px;font-size:13px;color:var(--soft)}
+.phones{position:relative;height:380px}
+.phone{position:absolute;width:190px;height:380px;border-radius:30px;background:#1b1b1f;padding:10px;box-shadow:0 30px 60px rgba(0,0,0,.2)}
+.phone .scr{width:100%;height:100%;border-radius:22px;background:#fff;display:grid;grid-template-rows:auto 1fr auto;padding:14px;gap:10px;font-size:10px;color:#333}
+.phone .bar{height:8px;border-radius:4px;background:#e9eef0}
+.phone .graph{border-radius:10px;background:linear-gradient(180deg,#eef6f1,#fff);position:relative}
+.phone .graph::after{content:"";position:absolute;left:10%;right:10%;bottom:20%;height:3px;background:var(--teal);border-radius:3px;transform:rotate(-10deg)}
+.ph1{left:10%;top:0;transform:rotate(-6deg)}.ph2{left:48%;top:30px;transform:rotate(5deg)}
+.ph2 .scr{background:linear-gradient(180deg,#dfe9f5,#f6f3ee)}
+@media (max-width:860px){.herokaart .top{grid-template-columns:1fr}.phones{height:300px}.phone{height:300px;width:150px}}
+.chips{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+.chips>div{background:#fff;border-radius:14px;padding:14px 16px;display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;font-size:12px;color:var(--soft)}
+.chips i{width:28px;height:28px;border-radius:50%;background:var(--mint);display:block}
+.chips b{display:block;font:600 13px Poppins;color:var(--ink)}
+@media (max-width:860px){.chips{grid-template-columns:1fr 1fr}}
+/* logo's */
+.logos{text-align:center;padding:40px 0}
+.logos p{font-size:13px;color:var(--soft);margin-bottom:18px}
+.logos div{display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
+.logos span{width:84px;height:30px;border-radius:6px;background:#e9ecea;display:inline-block}
+/* statement */
+.statement h2{max-width:26ch;margin:0 auto;text-align:center;font-weight:400;font-size:clamp(1.8rem,3.4vw,2.6rem)}
+/* programma */
+.paneel{border-radius:var(--r);margin:0 20px;padding:56px 40px}
+.paneel.geel{background:var(--yellow)}
+.paneel h2{text-align:center}
+.paneel p.sub{text-align:center;color:var(--soft);max-width:52ch;margin:12px auto 36px}
+.rollen{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rol{background:#fff;border-radius:18px;padding:16px 16px 22px}
+.rol .ph{aspect-ratio:4/3;margin-bottom:16px}
+.rol h3{font-size:1.1rem;margin-bottom:10px;color:var(--green)}
+.rol li{list-style:none;font-size:13px;color:var(--soft);margin:6px 0;display:flex;gap:8px}
+.rol li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blue);margin-top:8px;flex:0 0 6px}
+.rol a{display:inline-block;margin-top:12px;font:600 13px Poppins;color:var(--blue);text-decoration:none}
+@media (max-width:860px){.rollen{grid-template-columns:1fr}}
+.cijfers{background:var(--peach);display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center;margin-top:20px}
+.cijfers b{display:block;font:500 clamp(2.4rem,5vw,3.6rem)/1 Poppins;color:var(--blue)}
+.cijfers span{font-size:13px;color:var(--soft)}
+@media (max-width:700px){.cijfers{grid-template-columns:1fr}}
+/* twee kaarten */
+.twee{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:0 20px}
+.twee>div{border-radius:var(--r);padding:48px 36px;text-align:center}
+.twee .a{background:var(--cyan)}.twee .b{background:var(--beige)}
+.twee h2{margin:16px 0 12px}
+.twee p{color:var(--soft);max-width:38ch;margin:0 auto 16px;font-size:14px}
+.badge{display:inline-flex;align-items:center;gap:10px;background:var(--teal);color:#fff;border-radius:12px;padding:8px 14px 8px 8px;font-size:12px}
+.badge .ph{width:40px;height:40px;border-radius:10px}
+@media (max-width:860px){.twee{grid-template-columns:1fr}}
+/* klantcase */
+.case{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center}
+.case .ph{aspect-ratio:4/5;border-radius:20px}
+.case blockquote{color:var(--soft);font-size:15px;margin:14px 0 18px}
+.case .who{display:flex;gap:10px;align-items:center;font-size:13px}
+.case .who i{width:36px;height:36px;border-radius:50%;background:#e4ebe6}
+.case .nums{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px}
+.case .nums b{display:block;font:500 2.4rem/1 Poppins;color:var(--blue)}
+.case .nums span{font-size:12px;color:var(--soft)}
+.sliderknop{display:flex;justify-content:center;gap:12px;margin-top:28px}
+.sliderknop button{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--blue);background:#fff;color:var(--blue)}
+@media (max-width:860px){.case{grid-template-columns:1fr}}
+/* tabs */
+.tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:28px 0}
+.tabs span{padding:8px 16px;border-radius:999px;border:1.5px solid var(--blue);font:600 12px Poppins;color:var(--blue)}
+.tabs span.on{background:var(--blue);color:#fff}
+.feature{background:var(--cyan);border-radius:var(--r);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:900px;margin:0 auto}
+.feature .ph{aspect-ratio:1;background:#fff;border-radius:20px}
+.feature p{color:var(--soft);font-size:14px;margin:12px 0}
+@media (max-width:760px){.feature{grid-template-columns:1fr}}
+/* cta */
+.cta{background:var(--blue);color:#fff;border-radius:var(--r);margin:0 20px;padding:72px 40px;text-align:center}
+.cta h2{color:#fff}.cta p{max-width:46ch;margin:14px auto 24px;opacity:.9;font-size:15px}
+.cta .btn{background:#fff;border-color:#fff;color:var(--blue)}
+.cta small{display:block;margin-top:18px;font-size:12px;opacity:.7}
+/* footer */
+footer{background:var(--green);color:#fff;padding:56px 0 24px;margin-top:40px;font-size:13px}
+footer .cols{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:28px}
+footer h4{font:600 13px Poppins;margin-bottom:12px}
+footer li{list-style:none;margin:6px 0;opacity:.9}
+footer .badges{display:flex;gap:20px;justify-content:center;margin:40px 0 20px}
+footer .badges span{width:70px;height:70px;border-radius:12px;background:rgba(255,255,255,.15);display:grid;place-items:center;font-size:10px}
+footer .onder{border-top:1px solid rgba(255,255,255,.15);padding-top:16px;font-size:11px;opacity:.7}
+@media (max-width:860px){footer .cols{grid-template-columns:1fr 1fr}}
+</style></head><body>
+<header><div class="logo"><b></b>wordmark</div><nav><a href="#">Product ⌄</a><a href="#">HR-hulp ⌄</a><a href="#">Prijzen</a><a href="#">Over ons ⌄</a><a href="#">Contact</a></nav><div class="right"><a class="btn solid" href="#">Boek een demo</a><span>NL ⌄</span><a href="#" style="color:var(--ink);text-decoration:none;font-weight:600">Login</a></div></header>
+
+<div class="herokaart"><div class="top">
+  <div><span class="eyebrow">Alles-in-één coachingplatform</span><h1 style="margin-top:12px">Coaching voor groei en vitaliteit</h1><p class="sub">Plaatshouder: elke medewerker krijgt vertrouwen in de volgende stap, dankzij een wetenschappelijk onderbouwde methode.</p><div class="btns"><a class="btn solid" href="#">Neem contact op</a><a class="btn" href="#">Zo werkt het</a></div><p class="ster">★ 0,0 vertrouwd door meer dan 000k gebruikers (plaatshouder)</p></div>
+  <div class="phones"><div class="phone ph1"><div class="scr"><div class="bar"></div><div class="graph"></div><div class="bar" style="width:60%"></div></div></div><div class="phone ph2"><div class="scr"><div class="bar" style="width:50%"></div><div class="ph" style="border-radius:14px">videobelscherm</div><div class="bar"></div></div></div></div>
+</div>
+<div class="chips"><div><i></i><div><b>Vitaliteitsscan</b>Een check-in van vijf minuten</div></div><div><i></i><div><b>1-op-1-coaching</b>In meerdere talen, wanneer het nodig is</div></div><div><i></i><div><b>HR-dashboard</b>Realtime, geanonimiseerde inzichten</div></div><div><i></i><div><b>Workshops</b>Maandelijks, speciaal voor jouw team</div></div></div></div>
+
+<div class="logos"><p>Toonaangevende organisaties vertrouwen op ons (plaatshouder)</p><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+
+<section class="statement"><div class="wrap"><h2>Wanneer je medewerkers vooruitgaan, groeit je organisatie mee</h2></div></section>
+
+<div class="paneel geel"><h2>Eén programma voor iedereen in je organisatie</h2><p class="sub">Plaatshouder: medewerkers krijgen individuele begeleiding, managers inzicht in hun team, HR inzichten om gericht aan de slag te gaan.</p>
+  <div class="rollen">
+    <div class="rol"><div class="ph">schermvoorbeeld: actieplan</div><h3>Voor medewerkers</h3><ul><li>Zelfscan</li><li>1-op-1-coaching</li><li>Maandelijkse workshops</li><li>Volledig vertrouwelijk</li></ul><a href="#">Ontdek meer →</a></div>
+    <div class="rol"><div class="ph">schermvoorbeeld: dashboard</div><h3>Voor HR-teams</h3><ul><li>Geanonimiseerd dashboard</li><li>Een toegewijde succesmanager</li><li>Activatiecampagnes</li><li>Ondersteuning bij internationale uitrol</li></ul><a href="#">Ontdek meer →</a></div>
+    <div class="rol"><div class="ph">schermvoorbeeld: teaminzicht</div><h3>Voor managers</h3><ul><li>Op tijd inzicht in hoe je team ervoor staat</li><li>Teamworkshops met experts</li><li>Maandelijkse workshops</li><li>Ondersteuning voor de ontwikkeling van managers</li></ul><a href="#">Ontdek meer →</a></div>
+  </div>
+</div>
+<div class="paneel cijfers" style="margin-top:20px"><div><b>00k+</b><span>mensen geholpen (plaatshouder)</span></div><div><b>00%</b><span>na vijf sessies veerkrachtiger (plaatshouder)</span></div><div><b>00%</b><span>gemiddeld rendement (plaatshouder)</span></div></div>
+
+<section style="padding:20px 0"><div class="twee"><div class="a"><span class="badge"><span class="ph"></span><span><b>Naam</b><br>Je persoonlijke succesmanager</span></span><h2>Binnen enkele weken aan de slag</h2><p>Plaatshouder: geen langdurig implementatietraject, een succesmanager helpt je op weg.</p><a class="btn" href="#" style="border:0">Lees meer over onboarding →</a></div><div class="b"><span class="badge" style="background:#fff;color:var(--ink)"><span class="ph"></span>Certificering en coachteam</span><h2>Al onze coaches werken volgens dezelfde methode</h2><p>Plaatshouder: getraind in één methode, gebaseerd op een internationale standaard.</p><a class="btn" href="#" style="border:0">Lees meer over onze methode →</a></div></div></section>
+
+<section><div class="wrap case"><div class="ph">plaatshouder: klantfoto</div><div><h3 style="font-size:1.5rem;color:var(--green);font-weight:500">Plaatshouder: casekop met een concreet resultaat</h3><blockquote>"Plaatshouder citaat van een klant over waarom ze begonnen en wat het opleverde."</blockquote><div class="who"><i></i><div><b>Naam</b><br>Functie, organisatie</div></div><div class="nums"><div><b>00%</b><span>ROI (plaatshouder)</span></div><div><b>00%</b><span>van de medewerkers volgde sessies (plaatshouder)</span></div></div></div></div><div class="sliderknop"><button>‹</button><button>›</button></div></section>
+
+<section class="c"><div class="wrap"><h2>Ondersteuning op elk moment</h2><div class="tabs"><span class="on">Zelfscan vitaliteit</span><span>1-op-1-coaching</span><span>Workshops</span><span>Dashboard en rapportage</span><span>Voortdurende ondersteuning</span></div><div class="feature" style="text-align:left"><div class="ph">illustratie</div><div><h2 style="font-size:1.5rem">In vijf minuten inzicht in hoe het met je gaat</h2><p>Plaatshouder: met een paar vragen zien medewerkers hoe het met ze gaat en waar ze aandacht aan kunnen besteden.</p><a href="#" style="font:600 13px Poppins;color:var(--blue);text-decoration:none">Ontdek meer →</a></div></div></div></section>
+
+<div class="cta"><h2>Benieuwd wat het voor jouw organisatie kan betekenen?</h2><p>Plaatshouder: we laten zien hoe scan, coaching en dashboard samen één programma vormen.</p><a class="btn" href="#">Boek een demo</a><small>Plaatshouder: regel over gebruik en opvolging.</small></div>
+
+<footer><div class="wrap"><div class="cols"><div><div class="logo" style="color:#fff"><b style="border-left-color:#fff"></b>wordmark</div><p style="margin-top:10px;opacity:.8">Vertrouwen in de volgende stap</p><p style="margin-top:20px;opacity:.8;font-size:12px">Adresregel<br>Postcode plaats<br>Telefoon</p></div><div><h4>Aan de slag</h4><li>Boek een demo</li><li>Contact</li><li>Inloggen</li></div><div><h4>Product</h4><li>Voor organisaties</li><li>Voor medewerkers</li><li>Methode</li><li>Prijzen</li><li>FAQ</li></div><div><h4>Over ons</h4><li>Ons verhaal</li><li>Stichting</li><li>Opleidingen</li><li>Word coach</li><li>Ons team</li></div><div><h4>Hulp</h4><li>HR-hulp</li><li>Casestudies</li></div></div><div class="badges"><span>badge</span><span>badge</span><span>badge</span></div><div class="onder">Remake ter studie, niet verbonden aan het merk. Plaatshouder voor disclaimer en juridische links.</div></div></footer>
+</body></html>

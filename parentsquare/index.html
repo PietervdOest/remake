@@ -1,0 +1,184 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Remake: ParentSquare homepage</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Remake of parentsquare.com (structure, type, colour, components). Copy is paraphrased, images are placeholders. */
+:root{--lime:#68E246;--forest:#1E4A1C;--forest-2:#163a15;--ink:#161616;--soft:#5a5a5a;--bg:#fff;--grey:#F4F5F3;--lav:#EBD9FF;--mint:#DDF7D2;--sky:#D6ECFF;--pink:#FFD6F0;--peach:#FFE3C7;--sun:#F6C34B;--purple:#7A3BF2;--r:20px;--max:1200px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:400 16px/1.55 Nunito,system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.c{text-align:center}
+h1,h2,h3{font-weight:600;letter-spacing:-.02em;line-height:1.1}
+h1{font-size:clamp(2.2rem,4.6vw,3.6rem)}h2{font-size:clamp(1.8rem,3.4vw,2.6rem)}h3{font-size:1.25rem}
+p.sub{color:var(--soft);max-width:60ch}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--forest);color:var(--forest);background:#fff}
+.btn.solid{background:var(--forest);color:#fff}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.08);background:#fff}
+.pill i{width:12px;height:12px;border-radius:4px;display:inline-block}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--forest);display:inline-flex;gap:8px;align-items:center}
+.eyebrow::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--lime)}
+.ph{background:linear-gradient(135deg,#dfe7df,#c6d6c4);border-radius:var(--r);display:grid;place-items:center;color:#4b5f49;font-weight:600;font-size:13px}
+section{padding:72px 0}
+/* banner + header */
+.banner{background:var(--lime);text-align:center;font-size:14px;padding:10px;font-weight:600}
+.banner a{margin-left:10px;background:#fff;padding:5px 12px;border-radius:8px;text-decoration:none;color:var(--ink)}
+header .wrap{display:flex;align-items:center;gap:32px;height:72px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:20px}
+.logo b{width:26px;height:26px;border-radius:8px;background:conic-gradient(var(--lime) 0 25%,#F15BB5 0 50%,#4CC9F0 0 75%,#7A3BF2 0)}
+nav{display:flex;gap:24px;margin:0 auto;font-weight:600;font-size:15px}
+nav a{text-decoration:none;color:var(--ink)}nav a::after{content:" ⌄";font-size:11px;opacity:.6}
+header .btn{padding:10px 16px}
+@media (max-width:900px){nav{display:none}}
+/* hero */
+.hero{padding:64px 0 40px}
+.hero h1{max-width:20ch;margin:0 auto 16px}
+.hero .sub{margin:0 auto 24px;text-align:center}
+.stage{position:relative;max-width:760px;margin:48px auto 0}
+.stage .ph{aspect-ratio:16/8}
+.tag{position:absolute}
+.t1{left:-6%;top:6%}.t2{right:-4%;top:10%}.t3{left:-14%;top:42%}.t4{right:-8%;top:46%}.t5{left:-4%;bottom:10%}.t6{right:-12%;bottom:8%}
+@media (max-width:760px){.tag{position:static;display:inline-flex;margin:6px}.stage .tags{text-align:center;margin-top:12px}}
+/* statement + floating cards + stats */
+.statement{position:relative;padding:120px 0 40px}
+.statement .stats{position:relative;z-index:2}
+.statement h2{max-width:28ch;margin:0 auto;text-align:center;font-weight:500}
+.float{position:absolute;display:flex;gap:10px;align-items:center;background:#fff;border-radius:14px;padding:8px 12px 8px 8px;box-shadow:0 10px 30px rgba(0,0,0,.08);font-size:12px;max-width:220px}
+.float .ph{width:42px;height:42px;border-radius:10px;flex:0 0 42px}
+.f1{left:4%;top:12%}.f2{left:16%;top:0}.f3{right:6%;top:6%}.f4{left:6%;bottom:38%}.f5{right:4%;bottom:42%}.f6{left:42%;bottom:30%}
+@media (max-width:900px){.float{display:none}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:64px;text-align:center}
+.stats b{display:block;font-size:clamp(2rem,4vw,3rem);font-weight:600}
+.stats span{color:var(--soft);font-size:14px}
+@media (max-width:700px){.stats{grid-template-columns:1fr 1fr}}
+/* 50/50 cards */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.split .ph{aspect-ratio:5/4}
+.split ul{list-style:none;display:grid;gap:8px;margin:20px 0 24px;color:var(--soft);font-size:15px}
+.split li::before{content:"• ";color:var(--forest)}
+.card-pink{background:var(--pink);border-radius:var(--r);padding:28px;aspect-ratio:5/4;display:grid;place-items:center}
+.card-pink .mock{background:#fff;border-radius:14px;width:85%;height:80%;box-shadow:0 20px 40px rgba(0,0,0,.1);display:grid;grid-template-rows:auto 1fr;padding:14px;gap:10px}
+.mock .bar{height:10px;border-radius:6px;background:#eee;width:40%}
+.mock .chart{border-radius:10px;background:linear-gradient(180deg,#f3f8f2,#fff);position:relative;overflow:hidden}
+.mock .chart::after{content:"";position:absolute;inset:auto 10% 20% 10%;height:3px;background:var(--lime);border-radius:3px;transform:rotate(-8deg)}
+@media (max-width:860px){.split{grid-template-columns:1fr}}
+/* partnerships + testimonials */
+.band{background:var(--forest);color:#fff}
+.band h2{color:#fff;text-align:center;max-width:28ch;margin:0 auto 32px}
+.logos{display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
+.logos span{width:70px;height:70px;border-radius:50%;background:rgba(255,255,255,.14);display:grid;place-items:center;font-size:11px;opacity:.9}
+.quote{background:#2a5a27;color:#fff;padding:72px 0}
+.quote .wrap{display:grid;grid-template-columns:1fr 1.6fr;gap:40px;align-items:center}
+.quote blockquote{font-size:clamp(1.3rem,2.2vw,1.8rem);line-height:1.35;font-weight:500}
+.quote mark{background:none;color:var(--lime)}
+.quote .who{margin-top:20px;font-size:13px;opacity:.85}
+.quote .ph{aspect-ratio:1;border-radius:16px;background:linear-gradient(135deg,#3f7a3a,#245b22);color:#cfe9cc}
+.pager{display:flex;gap:10px;align-items:center;justify-content:flex-end;margin-top:20px;font-size:13px}
+.pager button{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:none;color:#fff}
+@media (max-width:860px){.quote .wrap{grid-template-columns:1fr}}
+/* tabset */
+.tabset{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:40px;align-items:center;margin-top:40px}
+.tabset ul{list-style:none;display:grid;gap:14px;font-size:1.3rem;font-weight:500;color:#9a9a9a}
+.tabset li.on{color:var(--ink);display:flex;gap:10px;align-items:center}
+.tabset li.on::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--lime)}
+.tabset .ph{aspect-ratio:4/5;border-radius:24px}
+.tabset p{color:var(--soft);font-size:15px;margin:10px 0 16px}
+.tabset a{color:var(--forest);font-weight:700;font-size:14px;text-decoration:none}
+@media (max-width:860px){.tabset{grid-template-columns:1fr}}
+/* rotator */
+.rotator{background:var(--forest);color:#fff}
+.rotator h2{color:#fff}
+.rotator p.sub{color:#cfe0cd}
+.rail{display:flex;gap:16px;overflow-x:auto;margin-top:32px;padding-bottom:12px;scrollbar-width:none}
+.rail div{flex:0 0 240px;height:220px;border-radius:18px;padding:22px;font-size:1.25rem;font-weight:600;line-height:1.2;color:var(--ink)}
+.rail div:nth-child(1){background:var(--lime)}.rail div:nth-child(2){background:#7FD7FF}.rail div:nth-child(3){background:#F08BE0}.rail div:nth-child(4){background:var(--sun)}.rail div:nth-child(5){background:var(--purple);color:#fff}.rail div:nth-child(6){background:#FF9A62}
+/* feature links */
+.features{background:var(--grey)}
+.features h2{text-align:center;max-width:26ch;margin:0 auto}
+.features p.sub{text-align:center;margin:12px auto 32px}
+.flist{display:grid;gap:10px;max-width:900px;margin:0 auto}
+.flist a{display:grid;grid-template-columns:44px 1fr auto;gap:16px;align-items:center;background:#fff;border-radius:14px;padding:16px 20px;text-decoration:none;color:inherit}
+.flist i{width:44px;height:44px;border-radius:12px;display:block}
+.flist b{display:block;font-size:1.05rem}.flist span{font-size:14px;color:var(--soft)}
+.flist em{font-style:normal;color:var(--forest);font-weight:700}
+/* cta cards */
+.cta-purple{background:var(--purple);color:#fff;border-radius:var(--r);padding:48px;text-align:center}
+.cta-purple h3{font-size:1.6rem;margin:12px 0}
+.cta-sun{background:var(--sun);border-radius:var(--r);padding:28px;display:grid;grid-template-columns:1fr 1.4fr;gap:32px;align-items:center;margin-top:24px}
+.cta-sun .ph{aspect-ratio:4/3;border-radius:16px}
+.cta-sun h3{font-size:1.7rem;margin-bottom:8px}
+@media (max-width:760px){.cta-sun{grid-template-columns:1fr}}
+/* resources */
+.res{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+.res .ph{aspect-ratio:4/3;margin-bottom:12px}
+.res small{display:inline-block;background:var(--mint);padding:4px 10px;border-radius:6px;font-weight:700;font-size:11px;margin-bottom:8px}
+.res b{font-size:1rem;line-height:1.3;display:block}
+@media (max-width:760px){.res{grid-template-columns:1fr}}
+/* footer */
+footer{background:var(--forest);color:#fff;padding:64px 0 0;overflow:hidden}
+footer .cols{display:grid;grid-template-columns:auto repeat(4,1fr);gap:32px;font-size:13px}
+footer h4{font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-bottom:12px}
+footer li{list-style:none;margin:6px 0;opacity:.9}
+footer .word{font-size:clamp(4rem,14vw,13rem);font-weight:700;letter-spacing:-.04em;color:#2f6a2c;line-height:.8;margin-top:48px;white-space:nowrap}
+@media (max-width:860px){footer .cols{grid-template-columns:1fr 1fr}}
+</style></head><body>
+<div class="banner">Placeholder announcement: new research for school leaders <a href="#">Get the report</a></div>
+<header><div class="wrap"><div class="logo"><b></b>Wordmark</div><nav><a href="#">Platform</a><a href="#">Solutions</a><a href="#">Resources</a><a href="#">Company</a></nav><div class="btns"><a class="btn solid" href="#">Get demo</a><a class="btn" href="#">Sign in</a></div></div></header>
+
+<section class="hero"><div class="wrap c">
+  <h1>One platform to reach every family in the district</h1>
+  <p class="sub">Communication, websites, attendance and payments in one place, built so no family is left out.</p>
+  <div class="btns" style="justify-content:center"><a class="btn solid" href="#">Explore the platform →</a><a class="btn" href="#">Get a demo</a></div>
+  <div class="stage"><div class="ph">placeholder photo: school yard</div><div class="tags">
+    <span class="pill tag t1"><i style="background:#c9a6ff"></i>Intelligence</span><span class="pill tag t2"><i style="background:var(--lime)"></i>Communication</span><span class="pill tag t3"><i style="background:#4CC9F0"></i>Websites</span><span class="pill tag t4"><i style="background:#F15BB5"></i>Engagement</span><span class="pill tag t5"><i style="background:#6fe36f"></i>Notifications</span><span class="pill tag t6"><i style="background:#ffb347"></i>Attendance</span>
+  </div></div>
+</div></section>
+
+<section class="statement"><div class="wrap">
+  <div class="float f1"><div class="ph"></div>Placeholder claim about absenteeism</div>
+  <div class="float f2"><div class="ph"></div>Placeholder claim about one system</div>
+  <div class="float f3"><div class="ph"></div>Placeholder claim about up-to-date contacts</div>
+  <div class="float f4"><div class="ph"></div>Placeholder claim about resources</div>
+  <div class="float f5"><div class="ph"></div>Placeholder claim about safety</div>
+  <div class="float f6"><div class="ph"></div>Placeholder claim about one story</div>
+  <h2>We build for the real demands districts face every day.</h2>
+  <div class="stats"><div><b>00M+</b><span>students served (placeholder)</span></div><div><b>00%</b><span>families using the app (placeholder)</span></div><div><b>00%</b><span>district retention (placeholder)</span></div><div><b>000+</b><span>languages translated (placeholder)</span></div></div>
+</div></section>
+
+<section><div class="wrap split">
+  <div><span class="eyebrow">Contactability</span><h2 style="margin:12px 0">We help schools connect with families. All of them.</h2><p class="sub">Placeholder: short paragraph on reaching every family without an app or sign-in requirement, in any language.</p><div class="btns" style="margin-top:20px"><a class="btn solid" href="#">Schedule a demo →</a><a class="btn" href="#">Explore the platform</a></div></div>
+  <div class="ph">placeholder: dashboard snapshot</div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap split">
+  <div class="card-pink"><div class="mock"><div class="bar"></div><div class="chart"></div></div></div>
+  <div><h2>Engaged families lead to confident students</h2><ul><li>Every family engaged, no login required</li><li>One place for communication</li><li>Designed for how families engage today</li><li>Insights that drive action</li><li>Built with educators and families</li></ul><a class="btn solid" href="#">Explore features →</a></div>
+</div></section>
+
+<section class="band"><div class="wrap"><h2>Family engagement infrastructure trusted by 00,000+ schools (placeholder)</h2><div class="logos"><span>logo</span><span>logo</span><span>logo</span><span>logo</span><span>logo</span><span>logo</span><span>logo</span><span>logo</span></div></div></section>
+<div class="quote"><div class="wrap"><div class="ph">placeholder portrait</div><div><blockquote>"Placeholder testimonial. <mark>One highlighted sentence in lime</mark> carries the key result, the rest sets the scene."</blockquote><div class="who"><b>Name Surname</b><br>Role, District</div><div class="pager"><span>01 / 06</span><button>‹</button><button>›</button></div></div></div></div>
+
+<section><div class="wrap">
+  <h2 class="c">Built for schools, designed for families</h2><p class="sub c" style="margin:12px auto 0">Placeholder: founded by parents, built with educators.</p>
+  <div class="tabset"><ul><li class="on">Superintendents</li><li>Teachers and staff</li><li>Comms leaders</li><li>Tech leaders</li><li>Families and students</li></ul><div class="ph">placeholder photo</div><div><h3>Clarity and consistency district-wide</h3><p>Placeholder paragraph for the selected audience.</p><a href="#">● Learn how we support superintendents</a></div></div>
+</div></section>
+
+<section class="rotator"><div class="wrap"><h2>Made for how schools actually work</h2><p class="sub" style="margin-top:10px">Placeholder: schools don't just share information, they run attendance, forms, payments and more.</p>
+  <div class="rail"><div>Improve contactability and keep it up to date</div><div>Be the source families rely on</div><div>Make it easier to get involved</div><div>Reduce costs, increase impact</div><div>Improve attendance across the district</div><div>Less friction, more focus</div></div></div></section>
+
+<section class="features"><div class="wrap"><h2>All of your tools, one platform</h2><p class="sub">Placeholder: meet families in the channels they already use.</p>
+  <div class="flist">
+    <a href="#"><i style="background:#F15BB5"></i><div><b>Parent and community engagement</b><span>Placeholder one-liner.</span></div><em>→</em></a>
+    <a href="#"><i style="background:var(--lime)"></i><div><b>Attendance improvement</b><span>Placeholder one-liner.</span></div><em>→</em></a>
+    <a href="#"><i style="background:#4CC9F0"></i><div><b>Classroom communications</b><span>Placeholder one-liner.</span></div><em>→</em></a>
+    <a href="#"><i style="background:#6fe36f"></i><div><b>Mass alerts and notifications</b><span>Placeholder one-liner.</span></div><em>→</em></a>
+    <a href="#"><i style="background:#ffb347"></i><div><b>School websites</b><span>Placeholder one-liner.</span></div><em>→</em></a>
+  </div>
+  <div class="cta-purple" style="margin-top:24px"><span class="pill" style="color:var(--ink)">✦ Intelligence layer</span><h3>Placeholder: AI and data intelligence to reduce workload</h3><a class="btn" style="border-color:#fff;color:#fff;background:transparent" href="#">Learn more</a></div>
+  <div class="cta-sun"><div class="ph">placeholder photo</div><div><h3>Take the first step toward an all-in-one solution</h3><p>Placeholder: get a personalised look at how it works for your district.</p><a class="btn solid" style="margin-top:16px" href="#">Schedule a demo →</a></div></div>
+</div></section>
+
+<section><div class="wrap"><h2 class="c">Latest insights and resources</h2><div class="res"><div><div class="ph">placeholder</div><small>BLOG</small><b>Placeholder article title about leadership communication</b></div><div><div class="ph">placeholder</div><small>CASE STUDY</small><b>Placeholder case title with one measurable result</b></div><div><div class="ph">placeholder</div><small>GUIDE</small><b>Placeholder guide title for crisis communication</b></div></div></div></section>
+
+<footer><div class="wrap"><div class="cols"><div class="logo" style="color:#fff"><b></b></div><div><h4>Platform</h4><li>Overview</li><li>Intelligence</li><li>Principles</li><li>Packages</li></div><div><h4>Features</h4><li>Engagement</li><li>Attendance</li><li>Classroom</li><li>Alerts</li><li>Websites</li></div><div><h4>About</h4><li>Company</li><li>Contact</li><li>Careers</li><li>Newsletter</li></div><div><h4>Support</h4><li>Help center</li><li>Trust center</li><li>System status</li></div></div><div class="word">Wordmark</div></div></footer>
+</body></html>

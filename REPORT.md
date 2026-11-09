@@ -78,4 +78,10 @@ Gebouwd op de brief van 9 november: "Het leven gebeurt. Ook op het werk.", Dearl
 
 **Open punten.** Portaalschermen (Mark levert), één echt citaat kiezen, portaaladres, HubSpot Meetings achter Plan een kennismaking.
 
+## 5. Cleane variant naar superpower.com (`dearly/clean.html`)
+
+Op 9 november gaf Pieter superpower.com als voorbeeld: clean en vet. Wat die site doet: een donkere volschermhero met een kop in gewone letterdikte, daarna wit met veel lucht; één accentkleur die zelden voorkomt; "How it works" als vier fotokaarten met kleine UI-badges; featurerijen met tekst links en een groot productbeeld rechts; een spec-tabel met dunne lijnen; artsen als portretkaarten; het aanbod als checklist met prijs, drie cijfers en een FAQ; grijze secundaire tekst.
+
+De vertaling voor Dearly, in de eigen kleuren en letters: Fira Sans in gewoon gewicht voor koppen, Baskerville-cursief voor één woord, DIN alleen in labels, navy als inkt op een bijna witte achtergrond, ballonrood alleen als stip. Opbouw: volschermhero met foto, logo's, Zo werkt het als vier fotokaarten, twee featurerijen (leidinggevende, medewerker), "Geen losse sessies. Een partner." als spec-tabel met zeven rijen, vier begeleiders als portretkaarten, vier cases, het programma als checklist met drie cijfers en FAQ, navy slot. Geen ballonfoto's, alleen cijfers met bron, één gemarkeerde placeholder voor een citaat en placeholders voor de profielteksten van begeleiders.
+
 REMAKE COMPLETE

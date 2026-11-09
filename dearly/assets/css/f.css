@@ -2,7 +2,7 @@
    Laadt na dearly.css (navy, crème, teal, periwinkle, ballonrood; DIN + Baskerville). */
 
 /* hero: donker, grote typografie, één pilfoto, wisselende gebeurtenis */
-.f-hero{min-height:calc(var(--vh,1vh)*100);display:flex;align-items:center;padding:140px 0 56px;color:var(--creme);position:relative;overflow:hidden;
+.f-hero{min-height:min(calc(var(--vh,1vh)*100),900px);display:flex;align-items:center;padding:140px 0 56px;color:var(--creme);position:relative;overflow:hidden;
   background:radial-gradient(55% 60% at 100% 0%,rgba(159,184,220,.28),transparent 60%),radial-gradient(50% 55% at 0% 100%,rgba(25,125,130,.5),transparent 65%),var(--navy)}
 .f-hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,80px);align-items:center;position:relative;z-index:2}
 .f-hero .h1 .it{color:var(--peri);font-size:clamp(2.2rem,5vw,4.8rem)}

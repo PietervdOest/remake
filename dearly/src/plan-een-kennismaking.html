@@ -1,0 +1,27 @@
+<main data-kop="licht">
+<section class="kop"><div class="wrap programma">
+  <div>
+    <span class="label">Plan een kennismaking</span>
+    <h1 style="margin-top:16px">Zie hoe het werkt. <em>Geen verkooppraat.</em></h1>
+    <ul class="check" style="margin-top:24px"><li>We horen hoe het nu gaat bij jullie.</li><li>We laten het portaal en de route zien.</li><li>Je weet wat past, en wat het kost.</li></ul>
+    <div class="hulp" style="margin-top:8px"><b>Is er nu iets acuuts in je team?</b> Bel ons direct op <a href="tel:+31332340155">033 234 0155</a>. Bij een crisis staan we er binnen 48 uur.</div>
+  </div>
+  <div class="agenda">
+    <h3>Kies een moment</h3>
+    <div class="dagen" role="group" aria-label="Kies een dag"><button aria-pressed="true"><b>10</b>di</button><button aria-pressed="false"><b>11</b>wo</button><button aria-pressed="false"><b>12</b>do</button><button aria-pressed="false"><b>13</b>vr</button><button aria-pressed="false"><b>16</b>ma</button></div>
+    <div class="tijden" role="group" aria-label="Kies een tijd"><button aria-pressed="false">09:00</button><button aria-pressed="true">10:30</button><button aria-pressed="false">13:00</button><button aria-pressed="false">14:30</button><button aria-pressed="false">16:00</button></div>
+    <a class="btn solid" href="#">Bevestig de kennismaking</a>
+    <p style="margin-top:14px;font-size:13px;color:var(--soft)">Prototype. Hier komt de agenda van HubSpot Meetings.</p>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>Liever eerst even bellen?</h2>
+  <div class="raster">
+    <a href="tel:+31332340155"><small style="color:var(--soft)">Bel</small><h3>033 234 0155</h3></a>
+    <a href="mailto:hello@dearly.nl"><small style="color:var(--soft)">Mail</small><h3>hello@dearly.nl</h3></a>
+    <div><small style="color:var(--soft)">Bezoek</small><h3>Bergstraat 26, Amersfoort</h3></div>
+  </div>
+</div></section>
+<script>document.querySelectorAll('.agenda .dagen, .agenda .tijden').forEach(g=>{const b=[...g.querySelectorAll('button')];b.forEach(x=>x.addEventListener('click',()=>b.forEach(y=>y.setAttribute('aria-pressed',y===x))))});</script>
+</main>

@@ -84,4 +84,22 @@ Op 9 november gaf Pieter superpower.com als voorbeeld: clean en vet. Wat die sit
 
 De vertaling voor Dearly, in de eigen kleuren en letters: Fira Sans in gewoon gewicht voor koppen, Baskerville-cursief voor één woord, DIN alleen in labels, navy als inkt op een bijna witte achtergrond, ballonrood alleen als stip. Opbouw: volschermhero met foto, logo's, Zo werkt het als vier fotokaarten, twee featurerijen (leidinggevende, medewerker), "Geen losse sessies. Een partner." als spec-tabel met zeven rijen, vier begeleiders als portretkaarten, vier cases, het programma als checklist met drie cijfers en FAQ, navy slot. Geen ballonfoto's, alleen cijfers met bron, één gemarkeerde placeholder voor een citaat en placeholders voor de profielteksten van begeleiders.
 
+## 6. Gekozen richting en de hele site (`dearly/`)
+
+Pieter koos op 9 november de cleane variant. Die is nu de homepage (`dearly/index.html`) en de basis voor zeven subpagina's, gebouwd met `dearly/build.py` uit `dearly/src/` met één gedeeld stylesheet (`assets/css/clean.css`):
+
+| Pagina | Bestand | Kern |
+| --- | --- | --- |
+| Voor organisaties | `voor-organisaties.html` | Van brandjes blussen naar beleid, aanbod als spec-tabel, de leidinggevende, HR ziet trends, kosten van niets doen, FAQ |
+| Voor medewerkers | `voor-medewerkers.html` | Vertrouwelijk aanvragen, waar het over kan gaan, drie stappen als fotokaarten, privacy, begeleiders, gidsen, 113 |
+| Begeleiders | `begeleiders.html` | Vijf begeleiders zonder ballon, twee niveaus, word begeleider met lidmaatschap en citaten |
+| Over ons | `over-ons.html` | Missie uit de brief, vier overtuigingen, team, netwerk, klanten |
+| Kennisbank | `kennisbank.html` | Uitgelicht artikel, acht artikelen en cases, vier gidsen, voorstelling, nieuwsbrief |
+| Plan een kennismaking | `plan-een-kennismaking.html` | Agenda als plaatshouder voor HubSpot Meetings, bellen, acuut |
+| Inloggen | `inloggen.html` | Drie ingangen: portaal medewerkers, portaal HR, ledenomgeving |
+
+De vorige donkere richting staat nog als `dearly/variant-f.html`. Alle pagina's zijn gerenderd op 1440 pixels; home, organisaties en medewerkers ook op 390 pixels.
+
+**Nog open.** Portaaladres (`#PORTAAL-URL-INVULLEN`), HubSpot Meetings, portaalschermen, één echt citaat, profielteksten van begeleiders uit de bestaande profielen, downloadlink van het handboek.
+
 REMAKE COMPLETE

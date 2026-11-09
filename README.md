@@ -7,7 +7,7 @@ Studie-remakes van drie referentiesites en een Dearly-homepage die de lessen daa
 | `parentsquare/` | Remake van de homepage van parentsquare.com: structuur, typografie, kleur, componenten | `parentsquare/index.html` |
 | `thinkcompany/` | Remake van de homepage van thinkcompany.com | `thinkcompany/index.html` |
 | `inuka/` | Remake van de homepage van inukacoaching.com/nl | `inuka/index.html` |
-| `dearly/` | De Dearly-homepage in de nieuwe richting, met de lessen uit de drie remakes | `dearly/index.html` |
+| `dearly/` | De Dearly-site in de gekozen cleane richting: acht pagina's, gebouwd met `dearly/build.py` uit `dearly/src/` | `dearly/index.html` |
 | `REPORT.md` | Wat er per site is nagebouwd, wat de lessen zijn en hoe ze in de Dearly-versie zitten | |
 
 Alles is statische HTML en CSS. Openen kan direct vanaf schijf, of met een simpele server:

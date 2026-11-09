@@ -178,3 +178,7 @@ body[data-kop="licht"] header .logo img{filter:none}
 header nav{padding-right:32px}
 header .acties{padding-left:32px}
 @media (max-width:1100px){header nav{gap:14px;font-size:13px}}
+
+.stappen.drie{grid-template-columns:repeat(3,1fr)}
+@media (max-width:900px){.stappen.drie{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.stappen.drie{grid-template-columns:1fr}}
